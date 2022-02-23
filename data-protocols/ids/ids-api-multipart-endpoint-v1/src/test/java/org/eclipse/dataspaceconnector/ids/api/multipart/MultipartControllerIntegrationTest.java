@@ -49,11 +49,7 @@ public class MultipartControllerIntegrationTest extends AbstractMultipartControl
 
     @BeforeAll
     static void setUp() {
-        httpClient = testOkHttpClientBuilder()
-                .connectTimeout(1, TimeUnit.MINUTES)
-                .writeTimeout(1, TimeUnit.MINUTES)
-                .readTimeout(1, TimeUnit.MINUTES)
-                .build();
+        httpClient = testOkHttpClientBuilder().build();
     }
 
     @Test
