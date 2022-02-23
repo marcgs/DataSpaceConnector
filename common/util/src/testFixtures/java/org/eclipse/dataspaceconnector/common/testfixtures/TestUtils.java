@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
@@ -124,6 +125,22 @@ public class TestUtils {
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Helper method to create a temporary directory.
+     *
+     * @return a newly create temporary directory.
+     */
+    public static String tempDirectory() {
+        try {
+            return Files.createTempDirectory(TestUtils.class.getSimpleName()).toString();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+>>>>>>> feature/728-ci-test-timeouts
      * Create an {@link OkHttpClient.Builder} suitable for using in unit tests. The client configured with long timeouts
      * suitable for high-contention scenarios in CI.
      *

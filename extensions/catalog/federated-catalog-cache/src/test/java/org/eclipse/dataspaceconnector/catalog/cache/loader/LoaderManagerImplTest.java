@@ -49,7 +49,7 @@ class LoaderManagerImplTest {
 
         loaderManager.start(queue);
 
-        assertThat(completionSignal.await(100L, TimeUnit.MILLISECONDS)).isTrue();
+        assertThat(completionSignal.await(300L, TimeUnit.MILLISECONDS)).isTrue();
         verify(waitStrategyMock, atLeastOnce()).retryInMillis();
     }
 

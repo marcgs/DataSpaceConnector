@@ -22,7 +22,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.eclipse.dataspaceconnector.common.testfixtures.TestUtils;
 import org.eclipse.dataspaceconnector.spi.EdcException;
-import org.eclipse.dataspaceconnector.spi.monitor.ConsoleMonitor;
 import org.eclipse.dataspaceconnector.spi.monitor.Monitor;
 import org.eclipse.dataspaceconnector.spi.system.configuration.ConfigFactory;
 import org.glassfish.jersey.internal.inject.AbstractBinder;
@@ -48,7 +47,8 @@ class JettyServiceTest {
 
     @BeforeEach
     void setUp() {
-        monitor = new ConsoleMonitor();
+        monitor = new Monitor() {
+        };
         testController = new TestController();
     }
 
